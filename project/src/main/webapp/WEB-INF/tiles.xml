@@ -29,5 +29,27 @@ and open the template in the editor.
         <put-attribute name="title" value="Quản lý sảnh tiệc" />
         <put-attribute name="content" value="/WEB-INF/jsp/sanhtiec.jsp" />
     </definition>
-
+    
+    <definition name="baocao" extends="baseLayout">
+        <put-attribute name="title" value="Báo cáo" />
+        <put-attribute name="content" value="/WEB-INF/jsp/baocao.jsp" />
+    </definition>
+    
+        <!-- Definition Login base Layout -->
+    <definition name="loginBaseLayout" template="/WEB-INF/layout/loginBase.jsp">
+        <put-attribute name="title" value=""/>
+        <put-attribute name="content" value=""/>
+    </definition>
+    
+    <!-- Definition Login Layout -->
+    <definition name="login" extends="loginBaseLayout">
+        <put-attribute name="title" value="LOGIN"/>
+        <put-attribute name="content" value="/WEB-INF/jsp/login.jsp"/>
+    </definition>
+    
+    <!-- Definition Signup Layout -->
+    <definition name="signup" extends="loginBaseLayout">
+        <put-attribute name="title" value="SIGN UP"/>
+        <put-attribute name="content" value="/WEB-INF/jsp/signup.jsp"/>
+    </definition>
 </tiles-definitions>

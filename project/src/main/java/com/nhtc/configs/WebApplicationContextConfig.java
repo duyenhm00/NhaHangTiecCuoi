@@ -58,6 +58,18 @@ public class WebApplicationContextConfig implements WebMvcConfigurer{
         
         registry.addResourceHandler("/images/**")
                 .addResourceLocations("/resources/images/");
+           
+           registry.addResourceHandler("/js/**")
+                   .addResourceLocations("/resources/js/");
+           
+           registry.addResourceHandler("/slide/**")
+                   .addResourceLocations("/resources/img/slide/");
+           registry.addResourceHandler("/team/**")
+                   .addResourceLocations("/resources/img/team/");
+           
+            // All folder inside Vendor folder
+           registry.addResourceHandler("/vendor/**")
+                   .addResourceLocations("/resources/vendor/");
     }
     
     @Bean
@@ -132,13 +144,4 @@ public class WebApplicationContextConfig implements WebMvcConfigurer{
         return resolver;
     }
     
-    @Bean
-    public Cloudinary cloudinary() {
-        Cloudinary cloudinary= new Cloudinary(ObjectUtils.asMap(
-        "cloud_name", "dguzlcoru",
-        "api_key", "813789532168586",
-        "api_secret", "ZO5AyU1_Hthu3Pv5HxgfqcNUy6U",
-        "secure", true));
-        return cloudinary;
-    }
 }

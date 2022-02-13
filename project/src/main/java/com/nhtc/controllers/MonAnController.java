@@ -32,35 +32,35 @@ import org.springframework.web.bind.annotation.PostMapping;
  */
 //@Controller
 public class MonAnController {
-//    @Autowired
-//    private MonAnService monAnService;
-//    @Autowired
-//    private WebAppValidator monAnValidator;
-//    
-//    @InitBinder
-//    public void initBinder(WebDataBinder binder){
-//        binder.setValidator(monAnValidator);
-//    }
-//    
-//    
-//    @GetMapping("/admin/monan")
-//    public String list(Model model){
-//        model.addAttribute("monan", new MonAn());
-//        return "monan";
-//    }
-//    
-//    @PostMapping("/admin/monan")
-//    public  String add(Model model, @ModelAttribute(value = "monan") @Valid MonAn monan,
-//            BindingResult result){
-//        
-//        if(!result.hasErrors()){
-//            if (this.monAnService.addOrUpdate(monan) == true)
-//                return "redirect:/";
-//            else
-//                model.addAttribute("errMsg", "Something wrong!!!");
-//        }
-//        
-//        return "monan";
-//        
-//    }
+    @Autowired
+    private MonAnService monAnService;
+    @Autowired
+    private WebAppValidator monAnValidator;
+    
+    @InitBinder
+    public void initBinder(WebDataBinder binder){
+        binder.setValidator(monAnValidator);
+    }
+    
+    
+    @GetMapping("/admin/monan")
+    public String list(Model model){
+        model.addAttribute("monan", new MonAn());
+        return "monan";
+    }
+    
+    @PostMapping("/admin/monan")
+    public  String add(Model model, @ModelAttribute(value = "monan") @Valid MonAn monan,
+            BindingResult result){
+        
+        if(!result.hasErrors()){
+            if (this.monAnService.addOrUpdate(monan) == true)
+                return "redirect:/";
+            else
+                model.addAttribute("errMsg", "Something wrong!!!");
+        }
+        
+        return "monan";
+        
+    }
 }

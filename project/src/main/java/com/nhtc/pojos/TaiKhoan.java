@@ -10,12 +10,14 @@ import java.util.Collection;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -45,7 +47,7 @@ public class TaiKhoan implements Serializable {
     @Size(max = 45)
     @Column(name = "tenDangNhap")
     private String tenDangNhap;
-    @Size(max = 45)
+    @Size(max = 100)
     @Column(name = "matKhau")
     private String matKhau;
     @Size(max = 45)
@@ -53,8 +55,8 @@ public class TaiKhoan implements Serializable {
     private String loaiTaiKhoan;
     @OneToMany(mappedBy = "taiKhoan")
     private Collection<NhanVien> nhanVienCollection;
-    @OneToMany(mappedBy = "taiKhoan")
-    private Collection<KhachHang> khachHangCollection;
+    @OneToOne(mappedBy = "taiKhoan", fetch = FetchType.LAZY)
+    private KhachHang khachHang;
 
     public TaiKhoan() {
     }
@@ -105,12 +107,12 @@ public class TaiKhoan implements Serializable {
     }
 
     @XmlTransient
-    public Collection<KhachHang> getKhachHangCollection() {
-        return khachHangCollection;
+    public KhachHang getKhachHang() {
+        return khachHang;
     }
 
-    public void setKhachHangCollection(Collection<KhachHang> khachHangCollection) {
-        this.khachHangCollection = khachHangCollection;
+    public void setKhachHang(KhachHang khachHang) {
+        this.khachHang = khachHang;
     }
 
     @Override

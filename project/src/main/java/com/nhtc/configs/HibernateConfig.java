@@ -5,6 +5,8 @@
  */
 package com.nhtc.configs;
 
+import com.cloudinary.Cloudinary;
+import com.cloudinary.utils.ObjectUtils;
 import java.util.Properties;
 import javax.sql.DataSource;
 import static org.hibernate.cfg.AvailableSettings.DIALECT;
@@ -65,6 +67,16 @@ public class HibernateConfig {
         h.setSessionFactory(getSessionFactory().getObject());
         
         return h;
+    }
+    
+    @Bean
+    public Cloudinary cloudinary() {
+        Cloudinary cloudinary= new Cloudinary(ObjectUtils.asMap(
+        "cloud_name", "dguzlcoru",
+        "api_key", "813789532168586",
+        "api_secret", "ZO5AyU1_Hthu3Pv5HxgfqcNUy6U",
+        "secure", true));
+        return cloudinary;
     }
 }
 

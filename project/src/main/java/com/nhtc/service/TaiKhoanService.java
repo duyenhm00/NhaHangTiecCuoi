@@ -6,12 +6,13 @@
 package com.nhtc.service;
 
 import com.nhtc.pojos.TaiKhoan;
-import java.util.List;
+import org.springframework.security.core.userdetails.UserDetailsService;
 
 /**
  *
  * @author USER
  */
-public interface TaiKhoanService {
-    List<TaiKhoan> getTaiKhoan();
+public interface TaiKhoanService extends UserDetailsService{
+    boolean addUser(TaiKhoan user);
+    TaiKhoan getUserByUsername(String username);
 }

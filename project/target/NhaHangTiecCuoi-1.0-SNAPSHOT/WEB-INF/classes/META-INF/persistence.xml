@@ -11,6 +11,7 @@
     <class>com.nhtc.pojos.NhanVien</class>
     <class>com.nhtc.pojos.SanhTiec</class>
     <class>com.nhtc.pojos.TaiKhoan</class>
+    <class>com.nhtc.pojos.BaoCao</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/dtb_nhtc?zeroDateTimeBehavior=CONVERT_TO_NULL"/>

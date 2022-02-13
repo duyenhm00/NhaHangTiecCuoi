@@ -5,21 +5,26 @@
  */
 package com.nhtc.pojos;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.io.Serializable;
+import java.util.Collection;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinColumns;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -37,6 +42,9 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "KhachHang.findByDiaChiKH", query = "SELECT k FROM KhachHang k WHERE k.diaChiKH = :diaChiKH"),
     @NamedQuery(name = "KhachHang.findByGioiTinhKH", query = "SELECT k FROM KhachHang k WHERE k.gioiTinhKH = :gioiTinhKH")})
 public class KhachHang implements Serializable {
+
+    @OneToMany(mappedBy = "idKhachHang")
+    private Collection<BaoCao> baoCaoCollection;
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -59,9 +67,9 @@ public class KhachHang implements Serializable {
     @Size(max = 5)
     @Column(name = "gioiTinhKH")
     private String gioiTinhKH;
-    @JoinColumns({
-        @JoinColumn(name = "idTKKH", referencedColumnName = "idTaiKhoan")})
-    @ManyToOne
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "idTaiKhoan")
+    @JsonIgnore
     private TaiKhoan taiKhoan;
 
     public KhachHang() {
@@ -150,6 +158,15 @@ public class KhachHang implements Serializable {
     @Override
     public String toString() {
         return "com.nhtc.pojos.KhachHang[ idKhachHang=" + idKhachHang + " ]";
+    }
+
+    @XmlTransient
+    public Collection<BaoCao> getBaoCaoCollection() {
+        return baoCaoCollection;
+    }
+
+    public void setBaoCaoCollection(Collection<BaoCao> baoCaoCollection) {
+        this.baoCaoCollection = baoCaoCollection;
     }
     
 }
