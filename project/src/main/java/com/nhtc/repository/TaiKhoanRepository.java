@@ -15,7 +15,7 @@ import java.util.List;
  */
 public interface TaiKhoanRepository {
     boolean addUser(TaiKhoan user);
-
+    boolean updateUserRole(TaiKhoan user);
     TaiKhoan getUserByUsername(String name);
     
 }

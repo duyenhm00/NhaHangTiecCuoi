@@ -13,5 +13,5 @@ import java.util.List;
  * @author USER
  */
 public interface KhachHangRepository {
-    List<KhachHang> getKhachHang();
+    public boolean addKH(KhachHang kh);
 }

@@ -24,14 +24,14 @@ public class BaoCaoController {
     private BaoCaoService baoCaoService;
     
      @GetMapping("/baocao")
-    public String SignupView(Model model) {
+    public String baoCaoView(Model model) {
         model.addAttribute("baoCao", new BaoCao());
         return "baocao";
     }
 //    
 
     @PostMapping("/baocao")
-    public String Signup(Model model, @ModelAttribute(value = "baoCao") BaoCao bc) {
+    public String addBC(Model model, @ModelAttribute(value = "baoCao") BaoCao bc) {
         String errorMessage;
 
         if (this.baoCaoService.addBaoCao(bc) == true) {

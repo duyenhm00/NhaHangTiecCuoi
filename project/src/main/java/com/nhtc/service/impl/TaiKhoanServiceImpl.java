@@ -54,4 +54,9 @@ public class TaiKhoanServiceImpl implements TaiKhoanService{
         
         return new org.springframework.security.core.userdetails
                 .User(user.getTenDangNhap(), user.getMatKhau(), authorities);    }
+
+    @Override
+    public boolean updateUserRole(TaiKhoan user) {
+        return this.taiKhoanRepository.updateUserRole(user);
+    }
 }

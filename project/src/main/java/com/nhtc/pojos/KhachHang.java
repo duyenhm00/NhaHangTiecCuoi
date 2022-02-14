@@ -22,9 +22,11 @@ import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
+import org.springframework.web.multipart.MultipartFile;
 
 /**
  *
@@ -71,6 +73,9 @@ public class KhachHang implements Serializable {
     @JoinColumn(name = "idTaiKhoan")
     @JsonIgnore
     private TaiKhoan taiKhoan;
+    private String avatar;
+    @Transient
+    private  MultipartFile file;
 
     public KhachHang() {
     }
@@ -167,6 +172,34 @@ public class KhachHang implements Serializable {
 
     public void setBaoCaoCollection(Collection<BaoCao> baoCaoCollection) {
         this.baoCaoCollection = baoCaoCollection;
+    }
+
+    /**
+     * @return the avatar
+     */
+    public String getAvatar() {
+        return avatar;
+    }
+
+    /**
+     * @param avatar the avatar to set
+     */
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
+    }
+
+    /**
+     * @return the file
+     */
+    public MultipartFile getFile() {
+        return file;
+    }
+
+    /**
+     * @param file the file to set
+     */
+    public void setFile(MultipartFile file) {
+        this.file = file;
     }
     
 }

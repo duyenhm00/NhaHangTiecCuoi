@@ -33,7 +33,7 @@
     <div class="container-login100">
         <div class="wrap-login100">
             <div class="login100-pic js-tilt" data-tilt>
-                <img src="<c:url value="/img/signup-login/img-01.png"/>" alt="IMG">
+                <img src="<c:url value="/images/signup-login/img-01.png"/>" alt="IMG">
             </div>
 
             <div class="login100-form validate-form">
@@ -49,10 +49,6 @@
                         <div class="form-group">
                             <label for="password"><i class="fa fa-lock" aria-hidden="true"></i></label>
                                 <form:input type="password" path="matKhau" id="pass" placeholder="Password"/>
-                        </div>
-                        <div class="form-group">
-                            <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
-                            <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
                         </div>
                         <div class="container-login100-form-btn">
                             <button type="submit" class="login100-form-btn">SIGN UP</button>

@@ -7,6 +7,7 @@ package com.nhtc.repository.impl;
 
 import com.nhtc.pojos.TaiKhoan;
 import com.nhtc.repository.TaiKhoanRepository;
+import javax.persistence.Query;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
@@ -57,6 +58,22 @@ public class TaiKhoanRepositoryImpl implements TaiKhoanRepository{
         } catch(HibernateException ex){
             System.err.println(ex.getMessage());
         }
+        return false;    }
+
+    @Override
+    public boolean updateUserRole(TaiKhoan tk) {
+        Session session = this.sessionFactory.getObject().getCurrentSession();
+        
+        if(!tk.getLoaiTaiKhoan().isEmpty()){
+            Query q = session.createQuery("UPDATE TaiKhoan SET loaiTaiKhoan=:ul WHERE idTaiKhoan=:id ");
+            q.setParameter("ul", tk.getLoaiTaiKhoan());
+            q.setParameter("id", tk.getIdTaiKhoan());
+            
+            q.executeUpdate();
+            
+            return true;
+        }
+        
         return false;    }
     
 }

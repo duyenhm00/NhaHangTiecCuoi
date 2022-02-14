@@ -30,6 +30,7 @@ com\nhtc\service\LoaiMonService.class
 com\nhtc\configs\WebApplicationContextConfig.class
 com\nhtc\service\impl\LoaiSanhServiceImpl.class
 com\nhtc\repository\impl\NhanVienRepositoryImpl.class
+com\nhtc\controllers\KhachHangController.class
 com\nhtc\pojos\NhanVien_.class
 com\nhtc\repository\LoaiMonRepository.class
 com\nhtc\pojos\BaoCao_.class

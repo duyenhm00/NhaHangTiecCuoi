@@ -43,13 +43,19 @@ and open the template in the editor.
     
     <!-- Definition Login Layout -->
     <definition name="login" extends="loginBaseLayout">
-        <put-attribute name="title" value="LOGIN"/>
+        <put-attribute name="title" value="Đăng nhập"/>
         <put-attribute name="content" value="/WEB-INF/jsp/login.jsp"/>
     </definition>
     
     <!-- Definition Signup Layout -->
     <definition name="signup" extends="loginBaseLayout">
-        <put-attribute name="title" value="SIGN UP"/>
+        <put-attribute name="title" value="Đăng ký"/>
         <put-attribute name="content" value="/WEB-INF/jsp/signup.jsp"/>
+    </definition>
+        <!-- Definition Add Employee Layout -->
+    <definition name="addCustomer" extends="baseLayout">
+        <put-attribute name="banner" value=""/>
+        <put-attribute name="title" value="Tạo tài khoản khách hàng"/>
+        <put-attribute name="content" value="/WEB-INF/jsp/addCustomer.jsp"/>
     </definition>
 </tiles-definitions>

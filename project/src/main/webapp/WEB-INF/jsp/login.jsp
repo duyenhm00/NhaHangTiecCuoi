@@ -49,7 +49,7 @@
     <div class="container-login100">
         <div class="wrap-login100">
             <div class="login100-pic js-tilt" data-tilt>
-                <img src="<c:url value="/img/signup-login/img-01.png"/>" alt="IMG">
+                <img src="<c:url value="/images/signup-login/img-01.png"/>" alt="IMG">
             </div>
 
             <div class="login100-form validate-form">
@@ -73,14 +73,6 @@
                         </div>
 
                     </form>
-                    <div class="text-center p-t-12">
-                        <span class="txt1">
-                            Forgot
-                        </span>
-                        <a class="txt2" href="#">
-                            Username / Password?
-                        </a>
-                    </div>
                     <div class="text-center p-t-136">
                         <a class="txt2" href="<c:url value="/"/>">
                             BACK TO HOME

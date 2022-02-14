@@ -12,7 +12,11 @@ import org.springframework.security.core.userdetails.UserDetailsService;
  *
  * @author USER
  */
-public interface TaiKhoanService extends UserDetailsService{
+public interface TaiKhoanService extends UserDetailsService {
+
     boolean addUser(TaiKhoan user);
+
+    boolean updateUserRole(TaiKhoan user);
+
     TaiKhoan getUserByUsername(String username);
 }
