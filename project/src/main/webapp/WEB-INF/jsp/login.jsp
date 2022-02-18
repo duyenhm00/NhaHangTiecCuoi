@@ -49,7 +49,7 @@
     <div class="container-login100">
         <div class="wrap-login100">
             <div class="login100-pic js-tilt" data-tilt>
-                <img src="<c:url value="/images/signup-login/img-01.png"/>" alt="IMG">
+                <img src="<c:url value="/images/login.jpg"/>" alt="IMG">
             </div>
 
             <div class="login100-form validate-form">
@@ -85,7 +85,6 @@
                             <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
                         </a>
                     </div>
-
                 </div>
             </div>
         </div>

@@ -37,7 +37,7 @@ and open the template in the editor.
   padding: 20px 0px;
   border-left: 7px solid;
   box-shadow: 0 5px 8px rgba(0,0,0, 0.08);
-  border-color: #980000;
+  border-color: #05EAE6;
   animation: slideInLeft ease .7s, fadeOut linear 1s 7s forwards;
 }
 @keyframes slideInLeft{
@@ -66,7 +66,7 @@ and open the template in the editor.
 }
 .toast_icon{
   font-size: 25px;
-  color: #980000;
+  color: #05EAE6;
 }
 .toast_body{
   flex-grow: 1;
@@ -123,7 +123,7 @@ a:focus {
 
 a:hover {
   text-decoration: none;
-  color: #980000;
+  color: #05EAE6;
 }
 
 /*---------------------------------------------*/
@@ -239,10 +239,10 @@ iframe {
   align-items: center;
   padding: 15px;
   background: #999;
-  background: -webkit-linear-gradient(-135deg, #700000, #303030);
-  background: -o-linear-gradient(-135deg, #700000, #303030);
-  background: -moz-linear-gradient(-135deg, #700000, #303030);
-  background: linear-gradient(-135deg, #700000, #303030);
+  background: -webkit-linear-gradient(-135deg, #05EAE6, #303030);
+  background: -o-linear-gradient(-135deg, #05EAE6, #303030);
+  background: -moz-linear-gradient(-135deg, #05EAE6, #303030);
+  background: linear-gradient(-135deg, #05EAE6, #303030);
 }
 
 .wrap-login100 {
@@ -374,7 +374,7 @@ iframe {
 }
 
 .input100:focus + .focus-input100 + .symbol-input100 {
-  color: #980000;
+  color: #05EAE6;
   padding-left: 28px;
 }
 
@@ -402,7 +402,7 @@ iframe {
   width: 100%;
   height: 50px;
   border-radius: 25px;
-  background: #980000;
+  background: #05EAE6;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
