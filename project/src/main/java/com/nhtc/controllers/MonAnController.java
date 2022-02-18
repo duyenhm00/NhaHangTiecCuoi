@@ -9,8 +9,6 @@ import com.cloudinary.Cloudinary;
 import com.cloudinary.utils.ObjectUtils;
 import com.nhtc.pojos.MonAn;
 import com.nhtc.service.MonAnService;
-import com.nhtc.validator.TenMonAnValidator;
-import com.nhtc.validator.WebAppValidator;
 import java.io.IOException;
 import java.util.Map;
 import java.util.logging.Level;
@@ -34,14 +32,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class MonAnController {
     @Autowired
     private MonAnService monAnService;
-    @Autowired
-    private WebAppValidator monAnValidator;
-    
-    @InitBinder
-    public void initBinder(WebDataBinder binder){
-        binder.setValidator(monAnValidator);
-    }
-    
     
     @GetMapping("/admin/monan")
     public String list(Model model){
@@ -55,7 +45,7 @@ public class MonAnController {
         
         if(!result.hasErrors()){
             if (this.monAnService.addOrUpdate(monan) == true)
-                return "redirect:/";
+            return "redirect:/admin";
             else
                 model.addAttribute("errMsg", "Something wrong!!!");
         }

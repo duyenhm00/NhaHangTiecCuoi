@@ -27,15 +27,6 @@ import javax.xml.bind.annotation.XmlRootElement;
  */
 @Entity
 @Table(name = "nhan_vien")
-@XmlRootElement
-@NamedQueries({
-    @NamedQuery(name = "NhanVien.findAll", query = "SELECT n FROM NhanVien n"),
-    @NamedQuery(name = "NhanVien.findByIdNhanVien", query = "SELECT n FROM NhanVien n WHERE n.idNhanVien = :idNhanVien"),
-    @NamedQuery(name = "NhanVien.findByHoTenNV", query = "SELECT n FROM NhanVien n WHERE n.hoTenNV = :hoTenNV"),
-    @NamedQuery(name = "NhanVien.findBySdtNV", query = "SELECT n FROM NhanVien n WHERE n.sdtNV = :sdtNV"),
-    @NamedQuery(name = "NhanVien.findByEmailNV", query = "SELECT n FROM NhanVien n WHERE n.emailNV = :emailNV"),
-    @NamedQuery(name = "NhanVien.findByDiaChiNV", query = "SELECT n FROM NhanVien n WHERE n.diaChiNV = :diaChiNV"),
-    @NamedQuery(name = "NhanVien.findByGioiTinhNV", query = "SELECT n FROM NhanVien n WHERE n.gioiTinhNV = :gioiTinhNV")})
 public class NhanVien implements Serializable {
 
     private static final long serialVersionUID = 1L;

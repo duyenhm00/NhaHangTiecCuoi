@@ -14,4 +14,6 @@ import java.util.List;
  */
 public interface NhanVienService {
     List<NhanVien> getNhanVien();
+    boolean addorUpdateNhanVien(NhanVien nv, String un);
+    NhanVien getNhanVienById(int idSanhTiec);
 }

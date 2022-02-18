@@ -28,8 +28,8 @@
     </div>
 
     <div class="form-group">
-        <label for="noiDung">Nội dung báo cáo</label>
-        <form:textarea type="textarea" path="noiDung" id="noiDung"/>
+        <label for="noiDung" style="width: 100%">Nội dung báo cáo</label>
+        <div style="width: 100%"><form:textarea type="textarea" path="noiDung" id="noiDung"/></div>
     </div>
     <div class="form-group">
         <input type="submit" value="Báo cáo" class="btn btn-danger">

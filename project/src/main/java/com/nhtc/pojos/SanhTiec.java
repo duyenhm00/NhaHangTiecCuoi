@@ -32,13 +32,6 @@ import org.springframework.web.multipart.MultipartFile;
  */
 @Entity
 @Table(name = "sanh_tiec")
-@XmlRootElement
-@NamedQueries({
-    @NamedQuery(name = "SanhTiec.findAll", query = "SELECT s FROM SanhTiec s"),
-    @NamedQuery(name = "SanhTiec.findByIdSanhTiec", query = "SELECT s FROM SanhTiec s WHERE s.idSanhTiec = :idSanhTiec"),
-    @NamedQuery(name = "SanhTiec.findByTenSanhTiec", query = "SELECT s FROM SanhTiec s WHERE s.tenSanhTiec = :tenSanhTiec"),
-    @NamedQuery(name = "SanhTiec.findByNgayDatSanh", query = "SELECT s FROM SanhTiec s WHERE s.ngayDatSanh = :ngayDatSanh"),
-    @NamedQuery(name = "SanhTiec.findByAnhSanhTiec", query = "SELECT s FROM SanhTiec s WHERE s.anhSanhTiec = :anhSanhTiec")})
 public class SanhTiec implements Serializable {
 
     private static final long serialVersionUID = 1L;

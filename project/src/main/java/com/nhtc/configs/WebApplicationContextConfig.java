@@ -5,24 +5,12 @@
  */
 package com.nhtc.configs;
 
-import com.cloudinary.Cloudinary;
-import com.cloudinary.utils.ObjectUtils;
-import com.nhtc.formatter.LoaiMonFormatter;
-import com.nhtc.formatter.LoaiSanhFormatter;
-import com.nhtc.validator.TenMonAnValidator;
-import com.nhtc.validator.TenSanhTiecValidator;
-import com.nhtc.validator.WebAppValidator;
-import java.util.HashSet;
-import java.util.Set;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ResourceBundleMessageSource;
-import org.springframework.format.FormatterRegistry;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-import org.springframework.validation.Validator;
-import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
@@ -41,8 +29,7 @@ import org.springframework.web.servlet.view.JstlView;
 @ComponentScan(basePackages = {
     "com.nhtc.controllers",
     "com.nhtc.repository",
-    "com.nhtc.service",
-    "com.nhtc.validator"
+    "com.nhtc.service"
 })          //{"com.htmd.controllers, com.htmd....."}
 public class WebApplicationContextConfig implements WebMvcConfigurer{
     
@@ -81,52 +68,6 @@ public class WebApplicationContextConfig implements WebMvcConfigurer{
         resource.setSuffix(".jsp");
         
         return resource;
-    }
-
-    @Override
-    public Validator getValidator() {
-        return validator();
-    }
-    
-//    @Override
-//    public void addFormatters(FormatterRegistry registry){
-//        registry.addFormatter(new  LoaiMonFormatter());
-//    }
-    
-    @Override
-    public void addFormatters(FormatterRegistry registry){
-        registry.addFormatter(new  LoaiSanhFormatter());
-    }
-    
-//    @Bean
-//    public WebAppValidator monAnValidator(){
-//        Set<Validator> springValidators = new HashSet<>();
-//        springValidators.add(new TenMonAnValidator());
-//        
-//        WebAppValidator v= new WebAppValidator();
-//        v.setSpringValidators(springValidators);
-//        
-//        return v;
-//    }
-    
-     
-    @Bean
-    public WebAppValidator sanhTiecValidator(){
-        Set<Validator> springValidators = new HashSet<>();
-        springValidators.add(new TenSanhTiecValidator());
-        
-        WebAppValidator v= new WebAppValidator();
-        v.setSpringValidators(springValidators);
-        
-        return v;
-    }
-    
-    @Bean
-    public LocalValidatorFactoryBean validator(){
-        LocalValidatorFactoryBean v = new LocalValidatorFactoryBean();
-        v.setValidationMessageSource(messageSource());
-        
-        return v;
     }
     
     @Bean

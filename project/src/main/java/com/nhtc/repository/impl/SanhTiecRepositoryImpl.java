@@ -29,6 +29,7 @@ public class SanhTiecRepositoryImpl implements SanhTiecRepository{
     @Autowired
     private LocalSessionFactoryBean sessionFactory;
     
+    @Override
     public List<SanhTiec> getSanhTiecs(String kw, int page){
         Session s = sessionFactory.getObject().getCurrentSession();
         CriteriaBuilder builder = s.getCriteriaBuilder();

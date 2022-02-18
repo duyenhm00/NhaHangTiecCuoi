@@ -6,7 +6,9 @@
 package com.nhtc.service.impl;
 
 import com.nhtc.pojos.NhanVien;
+import com.nhtc.pojos.TaiKhoan;
 import com.nhtc.repository.NhanVienRepository;
+import com.nhtc.repository.TaiKhoanRepository;
 import com.nhtc.service.NhanVienService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,10 +23,30 @@ public class NhanVienServiceImpl implements NhanVienService{
 
     @Autowired
     private NhanVienRepository nhanVienRepository;
+    @Autowired
+    private TaiKhoanRepository taiKhoanRepository;
     
     @Override
     public List<NhanVien> getNhanVien() {
         return this.nhanVienRepository.getNhanVien();
+    }
+
+    @Override
+    public boolean addorUpdateNhanVien(NhanVien nv, String username) {
+        if(!username.equals("")){
+        TaiKhoan tk = this.taiKhoanRepository.getUserByUsername(username);
+        tk.setLoaiTaiKhoan("nhân viên");
+        
+        nv.setTaiKhoan(tk);
+        }
+        
+        return this.nhanVienRepository.addorUpdateNhanVien(nv);
+        
+    }
+
+    @Override
+    public NhanVien getNhanVienById(int i) {
+        return this.nhanVienRepository.getNhanVienById(i);
     }
     
 }

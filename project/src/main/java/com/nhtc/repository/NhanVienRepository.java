@@ -14,4 +14,7 @@ import java.util.List;
  */
 public interface NhanVienRepository {
     List<NhanVien> getNhanVien();
+    boolean addorUpdateNhanVien(NhanVien nv);
+    NhanVien getNhanVienById(int idSanhTiec);
+
 }
